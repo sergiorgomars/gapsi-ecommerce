@@ -1,0 +1,59 @@
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(center, center, 8px);
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+
+    .content {
+        @include flex(space-between, center, 8px);
+        max-width: 1280px;
+        width: 100%;
+
+        .logo_container {
+            @include flex(space-between, center, 8px);
+            @include font($font-size-large, 400, inherit);
+
+            img {
+                max-width: 200px;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:visited {
+                color: $black-color;
+            }
+        }
+    
+        .icons_container {
+            @include flex(space-between, center, 40px, row);
+            font-size: 20px;
+            .cart_container {
+                @include flex(space-between, center, 16px, row);
+                position: relative;
+                p {
+                    text-align: center;
+                    align-items: center;
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    top: -50%;
+                    right: -50%;
+                    background-color: red;
+                    color: white;
+                    border-radius: 50%;
+                    font-size: 12px;
+                }
+            }
+            svg {
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+ 
+}

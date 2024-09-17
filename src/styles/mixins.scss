@@ -1,0 +1,57 @@
+@mixin flex(
+    $justify: flex-start, 
+    $align: center, 
+    $gap: 0px, 
+    $direction: row, 
+    $wrap: nowrap 
+) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin font($size: 1px, $weight: normal, $color: inherit) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+ 
+// 👷🚧 work on progress
+@mixin grid($rows: 1, $columns: 1fr, $gap: 0px) {
+    display: grid;
+    grid-template-columns: repeat($rows, $columns);
+    grid-gap: $gap;
+}
+
+
+// Responsive mixins
+@mixin desktop {
+    @media only screen and (max-width: 2560px) { @content; }
+}
+
+@mixin laptop-large {
+    @media only screen and (max-width: 1440px) { @content; }
+}
+@mixin laptop-medium {
+    @media only screen and (max-width: 1140px) { @content; }
+}
+@mixin laptop-small {
+    @media only screen and (max-width: 1024px) { @content; }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 768px) { @content; }
+}
+
+@mixin mobile-large {
+    @media only screen and (max-width: 425px) { @content; }
+}
+@mixin mobile-medium {
+    @media only screen and (max-width: 375px) { @content; }
+}
+@mixin mobile-small {
+    @media only screen and (max-width: 320px) { @content; }
+}
+

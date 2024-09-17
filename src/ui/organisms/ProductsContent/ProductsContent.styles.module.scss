@@ -1,0 +1,89 @@
+
+@import "@mixins";
+@import "@constants";
+
+.container {
+    @include flex(space-between, flex-start, 32px, column);
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px 16px;
+
+    @include laptop-large {
+        max-width: 90%;
+    }
+
+    .title_container {
+        @include flex(space-between, center, 20px);
+        width: 100%;
+        @include laptop-small {
+            flex-direction: column;
+        }
+        .title {
+            @include font($font-size-medium, 400, inherit);
+            border-bottom: 2px solid $black-color;
+            padding: 4px 6px;
+            @include laptop-small {
+                width: 100%;
+            }
+        }
+
+        .search_bar {
+            @include flex(space-between, center, 10px);
+            @include laptop-small {
+                width: 100%;
+            }
+            input {
+                min-width: 400px;
+                @include laptop-small {
+                    min-width: auto;
+                    width: 100%;
+                }
+                padding: 5px 15px;
+                outline: none;
+                border: none;
+                box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.3);
+                transition: all ease-in-out 0.3s; 
+            }
+            input:focus {
+                padding: 5px 10px;
+                outline: none;
+                border: none;
+                box-shadow: 0 2px 0 0 #165db8; 
+            }
+
+            div {
+                padding: 5px;
+                outline: none;
+                border-radius: 5px;
+                background-color: #165db8;
+                color: #fff; 
+                cursor: pointer;
+            }
+        }
+
+        
+    }
+
+    .cards_container {
+        width: 100%;
+        display: grid;
+
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); 
+        grid-gap: 32px;
+
+        @include laptop-small {
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+        }
+
+
+        @include mobile-large {
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); 
+        }
+
+        p {
+            width: 100%;
+        }
+
+    }
+    
+}
