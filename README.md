@@ -29,7 +29,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:FRONTEND_PORT](http://localhost:3000) with your browser to see the frontend app.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the frontend app.
 
 
 ## Good to know
